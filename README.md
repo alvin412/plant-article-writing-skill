@@ -105,4 +105,4 @@ No license has been selected yet. Add a license before making the repository pub
 
 该仓库只包含 Codex 使用该 skill 所需的文件，不包含用户本地参考文献 PDF、Zotero 数据库或私人稿件材料。
 
-当前尚未选择开源许可证。如果计划公开仓库并允许他人复用或修改该 skill，建议先添加合适的 license。
+非常感谢大家的使用，需要更适配精细方向的可以联系我，邮箱：alvin412@163.com
