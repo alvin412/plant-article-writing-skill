@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plant Article Writing"
+  short_description: "Complete publication-ready plant manuscripts and reviews"
+  default_prompt: "Use $plant-article-writing to plan, read sources, draft, revise, and citation-check a publication-ready plant-science manuscript or review."

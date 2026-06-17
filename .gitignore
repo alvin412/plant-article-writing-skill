@@ -1,0 +1,33 @@
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local research materials not intended for the public skill repo
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.csv
+*.tsv
+*.nbib
+*.ris
+*.bib
+zotero.sqlite*
+
+# Generated manuscripts or temporary outputs
+outputs/
+drafts/
+tmp/
+temp/
