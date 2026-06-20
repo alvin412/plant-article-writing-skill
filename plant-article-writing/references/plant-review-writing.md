@@ -1,6 +1,6 @@
 # Plant Review Article Writing
 
-Use this reference when the user asks for a plant-science review article, literature review, narrative review, perspective-style review, or Chinese requests such as `植物综述`, `发表级综述`, `植物类综述文章`, `文献综述`, or `综述初稿`.
+Use this reference when the user asks for a plant-science narrative review, perspective, scoping review, systematic review, meta-analysis, or Chinese requests such as `植物综述`, `发表级综述`, `植物类综述文章`, `文献综述`, or `综述初稿`.
 
 This reference distills review-article logic from the local plant review corpus and the review-writing rules in `nature-writing` and `nature-polishing`. The papers are architecture and language references only. Do not copy their wording.
 
@@ -24,6 +24,10 @@ The outline must include:
 - evidence types or citation slots for each claim
 - proposed figures, tables, and boxes
 - unresolved questions and future-perspective points
+- selected review method: narrative, perspective, scoping, systematic, or meta-analysis
+- proposed databases, search period, screening logic, and evidence appraisal when the review is systematic or scoping
+
+For scoping, systematic, or meta-analytic work, also load `systematic-review-and-search.md`. Do not label a review systematic unless the search strings, dates, screening decisions, inclusion/exclusion criteria, and evidence appraisal are reproducible.
 
 ## Review Argument Chain
 
@@ -40,6 +44,8 @@ Good organizing principles:
 - breeding: trait constraint -> mechanistic or genomic resource -> validation boundary -> translational route
 
 Avoid `Author A reported X; Author B reported Y`. Instead group studies by what they collectively show, where they disagree, and what remains unresolved.
+
+For plant stress, gene-family, pathway, regulator, hormone, ncRNA, epigenetic, or signalling reviews, also load `plant-stress-review-storyline.md`. Use its progression from `Why -> What -> Where -> How -> Network -> Integration -> Application -> Future` to turn a catalogue of studies into a field-level explanatory model.
 
 ## Plant Review Archetypes
 
@@ -85,13 +91,14 @@ Use for MADS-box, bHLH, MYB, NAC, WRKY, NLR, SnRK, CIPK, HAK, aquaporins, transp
 
 Default outline:
 
-1. Define the family/pathway and conserved molecular features.
-2. Explain why this family/pathway is important in plants.
-3. Separate developmental roles from stress or trait roles.
-4. Group evidence by function, not by species list.
-5. Discuss network position: upstream signals, direct targets, interacting proteins, feedback loops.
-6. Identify conserved versus lineage- or crop-specific functions.
-7. End with functional validation gaps and engineering routes.
+1. Establish the environmental or agronomic problem and the synthesis gap.
+2. Define the family/pathway, origin, classification, conserved features, and normal biological functions.
+3. Map involvement across relevant abiotic and biotic stresses without forcing unsupported categories.
+4. Explain upstream control, direct targets, protein interactions, feedback, epigenetic regulation, and post-translational control.
+5. Integrate hormone signalling, shared stress nodes, development-stress trade-offs, and combined-stress crosstalk.
+6. Propose a unified, evidence-bounded regulatory model.
+7. Identify conserved versus lineage- or crop-specific functions.
+8. Evaluate engineering and breeding routes, limitations, and decisive future experiments.
 
 Avoid calling a gene a `master regulator` unless the literature supports broad upstream control with genetic and molecular evidence.
 
@@ -183,6 +190,8 @@ A strong plant review usually needs:
 - one timeline or workflow figure for technology/resource reviews
 - one future-directions box listing open questions and decisive experiments
 
+For integrative stress reviews, the conceptual model must show the causal reading path from stress inputs through shared and stress-specific signalling nodes to the focal regulator, targets, physiological outputs, growth or yield trade-offs, and breeding interventions. Visually distinguish demonstrated links from hypotheses.
+
 ### Future Perspectives
 
 The closing section should give a usable map of the field. Include:
@@ -242,4 +251,9 @@ Before returning a review outline or draft, check:
 - Evidence strength and causality are bounded.
 - Contradictions and gaps are named directly.
 - Figures/tables/boxes help readers navigate the field.
+- The final synthesis produces a unified regulatory model rather than merely repeating the preceding sections.
 - The ending offers open questions and feasible next experiments, not a generic summary.
+- The claim-citation matrix has no unsupported or metadata-only final citations.
+- Search and screening methods match the declared review type.
+- Independent plant-domain review, revision, and re-review have been completed for a finalized full review.
+- The final English and Chinese manuscripts, review-response record, and literature audit have been generated as the three required Word files and passed format QA.

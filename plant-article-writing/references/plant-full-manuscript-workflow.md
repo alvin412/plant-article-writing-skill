@@ -1,195 +1,254 @@
-# Plant Full Manuscript And Review Workflow
+# Plant Full Manuscript and Review Workflow
 
-Use this reference when the user asks for a complete plant-science manuscript, review article, literature review, manuscript outline, manuscript revision, or citation check.
+## Contents
 
-This workflow borrows four strengths from the writing-related skills:
+1. Project record
+2. Stage workflow
+3. Stage deliverables
+4. State and version tracking
+5. Drafting order
+6. Final package
 
-- `academic-paper`: phase-based workflow, outline gate, literature matrix, revision loop, and citation compliance.
-- `nature-writing`: argument-first drafting, section-specific jobs, and evidence-boundary discipline.
-- `nature-polishing`: paragraph diagnosis before sentence polishing and claim-strength calibration.
-- `nature-reader`: source-grounded bilingual close reading with stable anchors.
-- `nature-academic-search`: multi-source search, deduplication, citation verification, and fallback routing when evidence is thin.
+## 1. Project Record
 
-## Operating Rule
+Create a Paper Configuration Record containing:
 
-Do not fabricate references, findings, mechanisms, sample sizes, or validation. If the evidence base is insufficient, stop the draft at the affected claim, mark the gap, and search or ask for the missing source.
+- manuscript type and workflow mode
+- English and Chinese working titles
+- central claim or review thesis
+- target journal, readership, article type, word limit, and citation style
+- species, genotype, tissue, cell type, developmental stage, treatment, stress, environment, trait, pathway, and breeding context
+- available data, figures, tables, protocols, source papers, Zotero collection, and existing drafts
+- search date range, inclusion boundaries, output language, deadline, and missing inputs
+- project version, date, and current stage
 
-For a new full manuscript or review article, always produce an outline first and wait for user confirmation before drafting body sections. Existing section-polish requests do not require an outline unless the section logic is broken.
+The user must confirm this record and the detailed outline before body drafting.
 
-## Phase 0: Intake
+## 2. Stage Workflow
 
-Record the minimum configuration before major writing:
+### Stage 0: Intake
 
-- paper type: original research, review, perspective, methods/resource, or revision
-- target journal or style: Nature-family, generic SCI, or user-specified journal
-- output language: English, Chinese, or bilingual
-- citation style: numbered, author-year, journal-specific, or user-supplied
-- plant context: species, cultivar/accession, tissue, cell type, developmental stage, stress/treatment, trait, pathway, gene family, omics layer, and breeding context
-- evidence base: user data, supplied PDFs, Zotero folder, DOI list, existing draft, figures/tables, and required references
-- constraints: word count, section order, figure/table count, deadline, and whether the user wants full paper or staged writing
+Classify the project and detect available materials. Select the plant article archetype:
 
-Output a compact Paper Configuration Record and a proposed next step.
+- natural variation -> mechanism -> adaptation or breeding
+- genome or pangenome resource -> trait genetics
+- single-cell, spatial, or multi-omics atlas -> regulatory insight
+- immunity or hormone crosstalk -> molecular mechanism
+- developmental or transcription-factor module -> trait output
+- multi-omics prioritization -> functional gene discovery
+- plant review, perspective, scoping review, or systematic review
 
-## Phase 1: Reading Corpus And Bilingual Notes
+Output: Paper Configuration Record.
 
-When source papers are read during writing, create a compact note for each paper instead of only extracting a citation.
+### Stage 1: Outline Approval
 
-Use this note structure:
+Produce:
 
-```markdown
-### [First author Year] [Short title]
-
-- Metadata: title; authors; journal; year; DOI/PMID/URL; Zotero key if available.
-- Source anchor: page/section/block ID when available; figure/table IDs when used.
-- Original key claim: one or two exact-meaning English claims, paraphrased if copyright limits apply.
-- Academic Chinese interpretation: formal Chinese explanation of the claim, evidence, and boundary.
-- Plant context: species; tissue/cell type; genotype; developmental stage; stress/treatment; trait.
-- Evidence type: review synthesis, GWAS/QTL/eQTL/TWAS, pangenome, expression, single-cell/spatial, mutant, overexpression, knockout, complementation, biochemical assay, field trial, or other.
-- Useful for: Introduction / Review section / Results interpretation / Discussion / Future perspective.
-- Limitations: evidence weakness, species boundary, context boundary, correlation-vs-causation issue, or missing validation.
-- Citation slot: the exact manuscript claim this paper can support.
-```
-
-If a full PDF or DOI is provided and detailed reading is needed, follow the `nature-reader` pattern: build source anchors, preserve figure/table context, keep original/Chinese paired blocks for substantive claims, and answer later questions from the source anchors rather than memory.
-
-## Phase 2: Literature Synthesis
-
-Build a literature matrix before drafting Introduction, Discussion, or a review body.
-
-Minimum matrix columns:
-
-- theme or mechanism
-- paper and year
-- plant system
-- evidence type
-- central finding
-- strength of evidence
-- limitation or disagreement
-- manuscript citation slot
-
-For review articles, organize by synthesis logic, not chronology. Good grouping axes include mechanism, molecular scale, tissue/cell type, species, technology, evidence strength, and translation boundary.
-
-For original research manuscripts, map each background claim and discussion interpretation to at least one verified source or the user's own result.
-
-## Phase 3: Outline Gate
-
-For a new full manuscript, provide:
-
-- working title options
-- one-sentence central claim
-- paper type and target audience
-- section-by-section outline
-- key claim for each section
-- required evidence, figures, tables, and citations
-- missing inputs or weak evidence
-- drafting order
-
-For a review article, also provide:
-
-- review thesis
+- 3-5 working titles
+- one-sentence central argument
 - scope and exclusions
-- review archetype: mechanism-centered, technology/resource, gene-family/pathway, crop-improvement, or multi-scale synthesis
-- proposed figures, tables, and boxes
-- unresolved questions and future directions
+- section and subsection hierarchy
+- paragraph-level jobs for major sections
+- expected claims, evidence types, citation slots, figures, tables, and boxes
+- missing evidence and likely reviewer risks
+- word allocation and drafting order
 
-Wait for explicit user confirmation before drafting body sections.
+Stop and wait for explicit approval.
 
-## Phase 4: Drafting
+### Stage 2: Corpus and Search
 
-Draft in the order that reduces hallucination risk:
+Build:
 
-1. Results or core evidence summary when user data are available.
-2. Methods or resource description when reproducibility details are available.
-3. Introduction after the literature matrix is sufficient.
-4. Discussion after Results and citation slots are mapped.
-5. Abstract, title, keywords, and conclusion last.
+- reproducible search record
+- deduplicated source corpus
+- inclusion/exclusion record
+- literature matrix
+- terminology ledger
+- paper-level close-reading queue
 
-For review articles:
+Use `systematic-review-and-search.md` and `citation-and-close-reading-audit.md`.
 
-1. Write the Introduction and scope.
-2. Draft major synthesis sections in outline order.
-3. Add figures/tables/boxes concepts.
-4. Write future perspectives.
-5. Write abstract, title, and keywords last.
+### Stage 3: Evidence and Argument Blueprint
 
-Every section should follow:
+Map each planned paragraph to:
 
-`claim -> evidence -> plant context -> boundary -> significance`
+`paragraph job -> claim -> supporting source or result -> plant context -> boundary -> counterevidence -> significance`
 
-Use plant-specific context rather than generic academic phrasing. Name species, tissues, cell types, developmental stages, stresses, pathways, gene families, alleles, technologies, and validation types when they matter.
+Flag:
 
-## Phase 5: Evidence Rescue For Introduction And Discussion
+- unsupported claims
+- single-source broad claims
+- species/tissue/treatment mismatch
+- review-only support where primary evidence is available
+- contradictory evidence
+- association-to-causation drift
 
-Run an evidence sufficiency check before drafting or revising Introduction and Discussion.
+Do not draft unsupported paragraph claims.
 
-Trigger evidence rescue when:
+### Stage 4: Drafting
 
-- a paragraph uses generic phrases such as `many studies have shown` without specific studies
-- a mechanism is asserted without a source
-- a claim depends on recent progress but sources are older than 10 years and not seminal
-- a discussion interpretation lacks prior-work comparison
-- a review section has only one paper supporting a broad claim
-- citations are from unrelated species, tissues, treatments, or methods without stating the boundary
+For original research, draft in this order when materials permit:
 
-When triggered, follow a `nature-academic-search` style workflow:
+1. Results.
+2. Methods.
+3. Introduction.
+4. Discussion.
+5. Conclusion.
+6. Abstract, title, and keywords.
+7. Submission statements and figure legends.
 
-1. Query construction: include organism synonyms, gene/protein names, pathway terms, trait terms, stress/treatment terms, method terms, and key abbreviations.
-2. Source routing: search high-reliability sources first, such as PubMed/PMC, CrossRef, publisher metadata, and relevant preprint databases when appropriate.
-3. Parallel search: search independent databases when tools are available.
-4. Deduplicate: merge by DOI first, then title and first author.
-5. Rank: prefer relevance to the exact claim, recency, plant-system match, evidence strength, and journal reliability.
-6. Verify: confirm DOI, title, journal, year, and publication status before citing.
-7. Read: make a bilingual close-reading note for papers that will support nontrivial claims.
-8. Assign: attach each verified source to a specific manuscript claim or citation slot.
+For reviews:
 
-Do not add unverified citations to final prose.
+1. Introduction and scope.
+2. Synthesis sections in approved outline order.
+3. Contradictions, evidence limitations, and translation boundaries.
+4. Figures, tables, and boxes.
+5. Future perspectives.
+6. Abstract, title, and keywords.
 
-## Phase 6: Revision
+Use:
 
-For revision requests, produce a concise revision plan before rewriting if the draft has structural problems.
+`claim -> grouped evidence -> contrast/tension -> interpretation -> boundary -> next question`
 
-Revision checklist:
+### Stage 5: Integrity Gate 1
 
-- Does each paragraph have one job?
-- Does each claim have a result or citation?
-- Are Results and Discussion separated?
-- Are causal claims supported by perturbation, complementation, biochemical, or field evidence?
-- Are candidate genes labelled as candidates unless causality is established?
-- Are contradictory studies acknowledged?
-- Are limitations explicit and useful?
-- Are reviewer-facing risks addressed?
+Audit from scratch:
 
-When reviewer comments are provided, classify each comment as major, minor, editorial, or citation-related; then revise only the affected sections unless the user asks for a full rewrite.
+- references and identifiers
+- claim-citation alignment
+- statistics and quantitative consistency
+- figure/table references
+- method completeness
+- terminology and gene/protein typography
+- originality and non-fabrication
+- results-discussion separation
+- required sections and declarations
 
-## Phase 7: Citation Check
+Any fabricated, unverifiable, materially unsupported, or internally contradictory content is `BLOCK`.
 
-Before finalization:
+### Stage 6: Independent Peer Review
 
-- Extract all in-text citations.
-- Verify reference-list matches and remove citation orphans.
-- Resolve DOI/PMID/title metadata when possible.
-- Check year, journal, title, and author mismatches.
-- Flag unsupported claims and citation overreach.
-- Flag outdated sources when a recent review or primary paper is expected.
-- Confirm that review claims have multiple sources or a clear reason for relying on one source.
+Run the reviewer panel in `quality-gates-and-peer-review.md`. Reviewers do not rewrite the manuscript. Produce independent reports, editorial synthesis, decision, and revision roadmap.
 
-Report statuses as:
+Critical issues block finalization.
 
-`verified`, `metadata_mismatch`, `missing_reference`, `uncited_reference`, `weak_support`, `manual_needed`.
+### Stage 7: Revision and Response
 
-## Expected Outputs
+Create a traceability matrix for every editor and reviewer item. Revise only after deciding whether to:
 
-Use only the outputs needed for the current request:
+- accept and revise
+- partially accept
+- clarify presentation
+- add analysis or evidence
+- acknowledge limitation
+- respectfully disagree with evidence
+
+Record exact changed section, paragraph, figure, table, or supplement location.
+
+### Stage 8: Re-Review
+
+Verify each response against the revised manuscript. Do not accept an author's claimed change without locating it.
+
+Classify each item:
+
+- `verified-resolved`
+- `partially-resolved`
+- `not-resolved`
+- `new-risk`
+- `justified-disagreement`
+
+Major unresolved issues return to Stage 7.
+
+### Stage 9: Integrity Gate 2
+
+Repeat the complete Stage 5 audit from scratch. Also check that revisions did not create:
+
+- new citation mismatches
+- claim inflation
+- English/Chinese divergence
+- broken cross-references
+- duplicated or missing sections
+- unresolved response-letter claims
+
+Only `PASS` may proceed.
+
+### Stage 10: Submission and Figure/Data Gate
+
+Use `submission-figures-and-data.md` to check:
+
+- figure conclusion and panel evidence logic
+- legends, statistics, sample sizes, error bars, and image integrity
+- Data Availability, Code Availability, materials/protocol availability
+- author contributions, funding, conflicts, ethics, acknowledgements, and AI disclosure
+- target-journal requirements
+
+### Stage 11: Three Word Files
+
+Build the package specified in `word-deliverables.md`. Use real titles and Heading 1/2/3 styles. Keep the English and Chinese manuscripts complete and aligned.
+
+### Stage 12: Word QA and Release
+
+For all three files:
+
+1. Reopen and structurally validate.
+2. Audit heading hierarchy and numbering.
+3. Audit tables, figures, captions, references, headers/footers, page breaks, fonts, and spacing.
+4. Render every page to PNG.
+5. Inspect every page at 100%.
+6. Fix every defect and render again.
+7. Release only the latest passing files.
+
+## 3. Stage Deliverables
 
 - Paper Configuration Record
-- detailed outline
-- bilingual close-reading notes
+- approved detailed outline
+- search and screening record
 - literature matrix
-- evidence map
-- polished English manuscript text
-- academic Chinese rendering
-- revision plan and revised text
-- citation audit report
-- missing-evidence list
+- terminology ledger
+- bilingual close-reading notes
+- claim-evidence map
+- English and Chinese drafts
+- Integrity Gate 1 report
+- independent reviewer reports and editorial decision
+- revision roadmap and response matrix
+- re-review report
+- Integrity Gate 2 report
+- submission and figure/data checklist
+- three Word files and format QA report
 
-Keep final manuscript prose clean. Put workflow artifacts before or after the manuscript text, not inside it.
+## 4. State and Version Tracking
+
+Maintain a project manifest:
+
+```text
+project_id:
+version:
+current_stage:
+approved_outline_version:
+manuscript_version:
+corpus_version:
+review_round:
+integrity_1_status:
+re_review_status:
+integrity_2_status:
+word_qa_status:
+unresolved_items:
+last_updated:
+```
+
+Never overwrite the only copy of a major artifact. Keep versioned manuscript, response, and audit inputs until final release.
+
+## 5. Drafting Quality
+
+- One paragraph, one job.
+- Start paragraphs with the scientific or synthesis claim.
+- Keep claims near their supporting results or citations.
+- Use reverse outlining after each completed section.
+- Keep the terminology ledger authoritative.
+- Weaken or remove claims that exceed evidence.
+- Name contradictory evidence and alternative explanations.
+- End Discussion and review sections with bounded interpretation, not promotion.
+
+## 6. Final Package
+
+The final package is incomplete until all three Word files exist and pass structural and visual QA. The literature file is not a simple bibliography: it must allow an auditor to move from each manuscript claim to the cited paper, source location, supporting passage, translation, support grade, and evidence boundary.
