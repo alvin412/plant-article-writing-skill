@@ -53,5 +53,3 @@ Copy all five skill directories into the Codex skills directory. Each directory 
 $skills = 'plant-article-writing','reading-literature','plant-review-article','plant-research-article','article-finalize'
 $skills | ForEach-Object { Copy-Item -Recurse -Force ".\$_" "$env:USERPROFILE\.codex\skills\" }
 ```
-
-No open-source licence has been selected.
