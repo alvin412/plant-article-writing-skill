@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Finalize"
+  short_description: "Journal-specific formatting with bilingual final audit"
+  default_prompt: "Use $article-finalize to format an English manuscript for a target journal and produce a bilingual compliance audit."

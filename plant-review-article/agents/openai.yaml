@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plant Review Article"
+  short_description: "Evidence-led plant reviews with bilingual Word delivery"
+  default_prompt: "Use $plant-review-article to develop a publication-ready plant review and deliver the bilingual manuscript, evidence audit, and reviewer response."
