@@ -1,97 +1,57 @@
-# plant-article-writing
+# Plant Article Writing Skill Suite
 
-Version: **v0.1**
+Version: **v0.2**
 
-`plant-article-writing` is a Codex skill for publication-ready plant-science manuscripts and reviews. It supports plant biology, crop science, stress biology, immunity, development, genomics, GWAS/QTL/eQTL/TWAS, pangenomes, single-cell and spatial omics, signalling, transcription factors, adaptation, yield, and breeding.
+This repository contains one lightweight router and four independently callable Codex skills for plant-science manuscripts.
 
-The skill uses a gated workflow:
+## Skills
 
-`outline approval -> literature corpus -> evidence map -> drafting -> integrity review -> peer review -> revision -> re-review -> Word QA`
-
-For plant-stress and gene-family reviews, v0.1 adds the narrative chain:
-
-`Why -> What -> Where -> How -> Network -> Integration -> Application -> Future`
-
-This converts a paper catalogue into an evidence-bounded regulatory model covering abiotic and biotic stress, mechanism, hormone networks, crosstalk, growth–stress trade-offs, breeding value, and testable future directions.
+- `plant-article-writing`: routes broad requests.
+- `reading-literature`: full-paper bilingual close reading, claim verification, and confirmed Zotero child notes.
+- `plant-review-article`: plant reviews, perspectives, scoping reviews, systematic reviews, and meta-analyses.
+- `plant-research-article`: original plant research manuscripts with fixed core sections.
+- `article-finalize`: target-journal formatting, English-only final manuscript, and bilingual compliance audit.
 
 ## 中文说明
 
-`plant-article-writing` 是面向植物科学论文与综述写作的 Codex skill，适用于植物生物学、作物科学、逆境生物学、免疫、发育、基因组学、GWAS/QTL/eQTL/TWAS、泛基因组、单细胞与空间组学、信号转导、转录因子、适应性、产量和育种等方向。
+本仓库包含一个轻量路由 skill 和四个可独立调用的子 skill：文献全文精读与 Zotero 笔记、植物综述撰写、植物原创研究论文撰写，以及目标期刊格式终审。
 
-该 skill 使用带质量门控的完整流程：
+新建完整综述或研究论文时，必须先生成详细提纲并等待作者明确批准。提纲批准后，写作 skill 自动继续完成正文、润色、关键论点引文核查、模拟同行评审、修改、逐点回复、复审和 Word 质检。
 
-`大纲确认 -> 文献库构建 -> 证据映射 -> 正文撰写 -> 完整性检查 -> 模拟审稿 -> 修改 -> 再审 -> Word 质量检查`
+## Final Outputs
 
-v0.1 为植物逆境、基因家族和通路类综述新增以下叙事主线：
+The two writing skills create exactly three final files under `deliverables/`:
 
-`Why -> What -> Where -> How -> Network -> Integration -> Application -> Future`
+1. `01_plant_article_bilingual.docx`
+2. `02_claim_citation_audit_bilingual.docx`
+3. `03_peer_review_and_response_bilingual.docx`
 
-该框架强调从研究背景和对象定义出发，依次整合非生物与生物胁迫、作用机制、激素与信号网络、Crosstalk、发育—逆境权衡、统一调控模型、育种应用及可检验的未来方向。
+All search records, reading notes, outlines, drafts, evidence maps, JSON inputs, reviewer working files, validation reports, and rendered pages go under `intermediate_files/`.
 
-## Core capabilities
+`article-finalize` creates:
 
-- Mandatory outline approval before drafting a new full manuscript or review.
-- Reproducible literature search and screening.
-- Full-paper bilingual close reading.
-- Claim-level citation and source-passage verification.
-- Plant-specific evidence and causality boundaries.
-- Narrative, perspective, scoping, and systematic review support.
-- Independent plant-domain peer review, revision, and re-review.
-- Figure, data, declaration, and submission-package checks.
-- Three hierarchical Word deliverables with structural and visual QA.
-- Mechanism-led plant-stress review storyline and unified-model design.
+1. `01_journal_formatted_manuscript_en.docx`
+2. `02_journal_compliance_audit_bilingual.docx`
 
-## Repository structure
+It does not regenerate peer-review responses.
+
+## Repository Structure
 
 ```text
-.
-|-- README.md
-|-- FUNCTIONS.md
-|-- RELEASE_MANIFEST.md
-|-- .gitignore
-`-- plant-article-writing/
-    |-- SKILL.md
-    |-- agents/
-    |   `-- openai.yaml
-    |-- references/
-    |   |-- citation-and-close-reading-audit.md
-    |   |-- plant-full-manuscript-workflow.md
-    |   |-- plant-review-writing.md
-    |   |-- plant-stress-review-storyline.md
-    |   |-- quality-gates-and-peer-review.md
-    |   |-- submission-figures-and-data.md
-    |   |-- systematic-review-and-search.md
-    |   `-- word-deliverables.md
-    `-- scripts/
-        `-- build_word_package.py
+plant-article-writing/       router
+reading-literature/          full-paper reading and Zotero notes
+plant-review-article/        plant review workflow
+plant-research-article/      original research workflow
+article-finalize/            target-journal finalization
 ```
 
 ## Installation
 
-Copy the `plant-article-writing` folder into the Codex skills directory:
+Copy all five skill directories into the Codex skills directory. Each directory contains its own `SKILL.md` and can be invoked independently.
 
 ```powershell
-Copy-Item -Recurse -Force .\plant-article-writing $env:USERPROFILE\.codex\skills\
+$skills = 'plant-article-writing','reading-literature','plant-review-article','plant-research-article','article-finalize'
+$skills | ForEach-Object { Copy-Item -Recurse -Force ".\$_" "$env:USERPROFILE\.codex\skills\" }
 ```
 
-安装时，将 `plant-article-writing` 文件夹复制到 Codex skills 目录：
-
-```powershell
-Copy-Item -Recurse -Force .\plant-article-writing $env:USERPROFILE\.codex\skills\
-```
-
-Invoke it as:
-
-```text
-$plant-article-writing
-```
-
-See [FUNCTIONS.md](FUNCTIONS.md) for the complete function list and [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md) for release contents and validation status.
-
-## Notes
-
-The repository excludes private manuscripts, local literature libraries, generated drafts, and local caches.
-
-No open-source licence has been selected. Add an appropriate licence before granting reuse or redistribution rights.
-
-For requests requiring finer domain adaptation, contact: alvin412@163.com.
+No open-source licence has been selected.

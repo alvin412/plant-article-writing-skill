@@ -2,67 +2,30 @@
 
 ## Version
 
-`v0.1`
+`v0.2`
 
-Initial public workflow release of `plant-article-writing`, including the expanded publication pipeline and the mechanism-led plant-stress review storyline.
-
-## Included skill files
+## Skill Directories
 
 ```text
-plant-article-writing/SKILL.md
-plant-article-writing/agents/openai.yaml
-plant-article-writing/references/citation-and-close-reading-audit.md
-plant-article-writing/references/plant-full-manuscript-workflow.md
-plant-article-writing/references/plant-review-writing.md
-plant-article-writing/references/plant-stress-review-storyline.md
-plant-article-writing/references/quality-gates-and-peer-review.md
-plant-article-writing/references/submission-figures-and-data.md
-plant-article-writing/references/systematic-review-and-search.md
-plant-article-writing/references/word-deliverables.md
-plant-article-writing/scripts/build_word_package.py
+plant-article-writing/
+reading-literature/
+plant-review-article/
+plant-research-article/
+article-finalize/
 ```
 
-## Repository documentation
+Each directory contains `SKILL.md` and `agents/openai.yaml`. The four functional skills contain only the references and scripts required for their workflows.
 
-```text
-README.md
-FUNCTIONS.md
-RELEASE_MANIFEST.md
-.gitignore
-```
+## v0.2 Highlights
 
-## v0.1 highlights
-
-- Mandatory outline approval and gated full-project workflow.
-- Reproducible search, bilingual close reading, and claim-level citation verification.
-- Independent plant-domain peer review, revision, and re-review.
-- Three structured Word deliverables and format QA.
-- Plant-stress review narrative:
-  `Why -> What -> Where -> How -> Network -> Integration -> Application -> Future`.
-- Integrated abiotic/biotic stress, hormone networks, crosstalk, development–stress trade-offs, unified regulatory models, and breeding translation.
-
-## Excluded materials
-
-- local reference PDFs
-- Zotero databases
-- private manuscripts
-- generated drafts
-- local validation caches
-- Python virtual environments
-- OS/editor metadata
+- Replaced mixed project modes with one router and four independent skills.
+- Added full-paper literature reading with explicit Zotero-note confirmation and post-write verification.
+- Split plant review and original research writing into distinct workflows.
+- Added the required original-research section contract.
+- Automated polishing, claim-level citation audit, peer review, revision, point-by-point response, re-review, and three-file delivery after outline approval.
+- Standardized `deliverables/` and `intermediate_files/` project layout.
+- Added target-journal finalization with English-only manuscript output and bilingual compliance reporting.
 
 ## Validation
 
-Run:
-
-```powershell
-python "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quick_validate.py" ".\plant-article-writing"
-```
-
-Expected result:
-
-```text
-Skill is valid!
-```
-
-The Word package builder has been executed against its generated template. All three DOCX files reopened successfully and passed title and heading-hierarchy checks. Page-image QA still requires an available Word-compatible renderer.
+Run `quick_validate.py` against each of the five skill directories. Run both copies of `build_article_package.py` against their generated template and confirm that all three DOCX files reopen with valid titles and heading hierarchy. Page-image inspection remains a separate mandatory release gate during real manuscript work.

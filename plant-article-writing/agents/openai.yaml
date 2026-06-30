@@ -1,4 +1,4 @@
 interface:
   display_name: "Plant Article Writing"
-  short_description: "Plant papers and mechanism-led reviews with verified evidence"
-  default_prompt: "Use $plant-article-writing to design and execute a publication-ready plant-science paper or review with an approved storyline, verified evidence, bilingual drafting, peer review, and final Word deliverables."
+  short_description: "Routes plant-paper work to four focused scientific skills"
+  default_prompt: "Use $plant-article-writing to route my plant-science manuscript request to the correct literature, review, research, or journal-finalization workflow."

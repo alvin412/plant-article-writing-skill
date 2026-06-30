@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plant Research Article"
+  short_description: "Plant research papers with end-to-end evidence checks"
+  default_prompt: "Use $plant-research-article to develop a complete plant research manuscript and deliver the bilingual paper, evidence audit, and reviewer response."

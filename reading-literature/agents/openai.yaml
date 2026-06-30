@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reading Literature"
+  short_description: "Full-paper reading with verified Zotero notes"
+  default_prompt: "Use $reading-literature to read a cited paper in full, verify its evidence, and offer to save the bilingual notes to Zotero."
