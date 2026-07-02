@@ -2,7 +2,7 @@
 
 ## Version
 
-`v0.2`
+`v0.3`
 
 ## Skill Directories
 
@@ -15,6 +15,14 @@ article-finalize/
 ```
 
 Each directory contains `SKILL.md` and `agents/openai.yaml`. The four functional skills contain only the references and scripts required for their workflows.
+
+## v0.3 Highlights
+
+- Added verified `JIF >= 10.0` high-impact literature synthesis to `reading-literature`.
+- Added bilingual terminology ledgers and paraphrased professional expression guidance.
+- Added separate reported research-logic maps and explicitly inferred research ideas.
+- Added a controlled, provenance-backed skill domain update gate requiring author approval.
+- Prevented JIF from being treated as paper-level evidence quality or a replacement for directly relevant lower-JIF literature.
 
 ## v0.2 Highlights
 
