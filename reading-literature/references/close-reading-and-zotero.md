@@ -8,6 +8,7 @@ Record:
 Citation key:
 Title and authors:
 Journal and year:
+JIF value, edition year, and verification source:
 DOI / PMID / PMCID / URL:
 Zotero item key:
 Article type and publication status:
@@ -33,6 +34,9 @@ Plant context and conditions:
 Evidence strength:
 Limitations and alternative explanations:
 Potential manuscript uses:
+Field terminology candidates:
+Reported research logic:
+Inferred research ideas:
 ```
 
 For Results, follow the evidence chain from design and controls to quantitative result and figure or table. For Discussion, distinguish demonstrated findings from interpretation, extrapolation, and speculation. Include relevant supplementary evidence.
@@ -90,6 +94,8 @@ Relevant figures and tables
 Claim-support decisions
 Limitations and alternative explanations
 Unresolved checks
+High-impact terminology and research-logic synthesis
+Skill domain update status
 ```
 
 Preserve existing notes. Append only when the user identifies the destination note and authorizes appending. Otherwise create a new dated child note.

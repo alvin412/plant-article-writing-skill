@@ -1,13 +1,13 @@
 # Plant Article Writing Skill Suite
 
-Version: **v0.2**
+Version: **v0.3**
 
 This repository contains one lightweight router and four independently callable Codex skills for plant-science manuscripts.
 
 ## Skills
 
 - `plant-article-writing`: routes broad requests.
-- `reading-literature`: full-paper bilingual close reading, claim verification, and confirmed Zotero child notes.
+- `reading-literature`: full-paper bilingual close reading, claim verification, confirmed Zotero notes, and terminology or research-logic synthesis from directly relevant journals with verified JIF values of at least 10.
 - `plant-review-article`: plant reviews, perspectives, scoping reviews, systematic reviews, and meta-analyses.
 - `plant-research-article`: original plant research manuscripts with fixed core sections.
 - `article-finalize`: target-journal formatting, English-only final manuscript, and bilingual compliance audit.
@@ -17,6 +17,8 @@ This repository contains one lightweight router and four independently callable 
 本仓库包含一个轻量路由 skill 和四个可独立调用的子 skill：文献全文精读与 Zotero 笔记、植物综述撰写、植物原创研究论文撰写，以及目标期刊格式终审。
 
 新建完整综述或研究论文时，必须先生成详细提纲并等待作者明确批准。提纲批准后，写作 skill 自动继续完成正文、润色、关键论点引文核查、模拟同行评审、修改、逐点回复、复审和 Word 质检。
+
+文献精读时，`reading-literature` 会对直接相关且已完成全文阅读的 JIF≥10 文献自动提炼领域术语、专业表达规律、已报道研究逻辑和可检验的新研究思路。候选知识必须显示来源和 JIF 年份，并在作者确认后才能写入独立领域参考文件。
 
 ## Final Outputs
 

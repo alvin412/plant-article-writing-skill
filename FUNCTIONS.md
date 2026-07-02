@@ -11,6 +11,9 @@
 - Reads all substantive available sections rather than only the abstract.
 - Produces English and academic-Chinese analytical notes with source anchors and figure or table context.
 - Grades exact claim support and blocks metadata-only evidence.
+- Verifies the latest available Clarivate JIF and builds a separate synthesis from directly relevant, full-text-read papers with `JIF >= 10.0`.
+- Extracts bilingual domain terminology, paraphrased professional expression guidance, reported research logic, and clearly labelled inferred research ideas.
+- Presents a provenance-backed candidate domain reference update and writes it only after author approval.
 - Asks for confirmation before writing notes to the exact Zotero item.
 - Uses direct Zotero note writing when available, otherwise verified Zotero Desktop interface control.
 
