@@ -1,4 +1,4 @@
 interface:
   display_name: "Plant Article Writing"
-  short_description: "Routes plant-paper work to four focused scientific skills"
-  default_prompt: "Use $plant-article-writing to route my plant-science manuscript request to the correct literature, review, research, or journal-finalization workflow."
+  short_description: "Routes plant papers to three integrated workflows"
+  default_prompt: "Use $plant-article-writing to route my plant-science request to literature reading, review writing, or research-article writing with integrated journal finalization."

@@ -1,43 +1,21 @@
-# Function List / 功能列表
+# 功能说明
 
-## Router / 路由
+## 写作任务分流
 
-`plant-article-writing` identifies whether a request concerns literature reading, a plant review, an original research paper, or journal finalization, then routes it to the correct independent skill.
+`plant-article-writing` 判断植物科学写作请求属于文献核查、综述写作还是原创研究论文写作，并交由相应技能处理。用户已明确论文类型时，直接使用对应技能。
 
-`plant-article-writing` 判断请求属于文献精读、植物综述、原创研究论文还是期刊终审，并交由对应独立 skill 处理。
+## 文献阅读与核查
 
-## Literature Reading / 文献精读
+`reading-literature` 支持针对性的论点和引文核查、论文全文精读以及研究思维导图的生成或审查。领域知识更新与科学图像素材积累只有在用户提出时才启动。核查保留原文位置、研究条件、矛盾证据和文献可获取范围。
 
-- Reads all substantive available sections rather than only the abstract.
-- Produces English and academic-Chinese analytical notes with source anchors and figure or table context.
-- Grades exact claim support and blocks metadata-only evidence.
-- Verifies the latest available Clarivate JIF and builds a separate synthesis from directly relevant, full-text-read papers with `JIF >= 10.0`.
-- Extracts bilingual domain terminology, paraphrased professional expression guidance, reported research logic, and clearly labelled inferred research ideas.
-- Presents a provenance-backed candidate domain reference update and writes it only after author approval.
-- Asks for confirmation before writing notes to the exact Zotero item.
-- Uses direct Zotero note writing when available, otherwise verified Zotero Desktop interface control.
+## 原创研究论文
 
-## Plant Review Article / 植物综述
+`plant-research-article` 支持局部修改和完整论文写作。Results 围绕有证据支持的贡献展开，每项实验承担明确的论证职责。完整论文工作流按已授权范围完成论点与引文核查、同行评审、修改、期刊终审和 Word 质检。
 
-- Supports narrative, perspective, scoping, systematic, and meta-analytic reviews.
-- Requires detailed outline approval before drafting a new full review.
-- Continues automatically through drafting, polishing, citation audit, peer review, revision, response, re-review, and Word QA.
-- Uses mechanism-led synthesis and evidence-bounded plant context.
+## 综述论文
 
-## Plant Research Article / 植物研究论文
+`plant-review-article` 支持叙述性综述、观点文章、系统综述、范围综述和荟萃分析。文章围绕研究问题综合证据，同时准确呈现不同研究之间的分歧、不确定性、检索边界与植物材料背景。
 
-- Writes Title, Abstract, Keywords, Introduction, Materials and Methods, Results and Analysis, Discussion, and Conclusion.
-- Uses only author-supplied data, methods, results, analyses, figures, and tables.
-- Checks methods, statistics, values, figures, tables, terminology, and English-Chinese alignment.
-- Automatically completes polishing, citation audit, peer review, revision, response, re-review, and Word QA after outline approval.
+## 交付文件
 
-## Article Finalize / 论文终审
-
-- Applies a named journal's current official requirements and template.
-- Checks references, section order, gene and allele italics, protein roman type, nomenclature, language, figures, tables, declarations, and submission conventions.
-- Produces an English-only final manuscript and a bilingual compliance report.
-- Does not regenerate reviewer responses.
-
-## File Organization / 文件组织
-
-The two writing skills output only three final Word files. Every intermediate artifact is placed under one `intermediate_files/` directory. Final files are placed under `deliverables/`.
+请求完整论文套件时，两套写作技能默认在 `deliverables/` 下输出四份 Word 文件：双语论文、论点引文核查、同行评审与回复、期刊合规审查。工作材料放在 `intermediate_files/`。局部修改只交付用户要求的内容。

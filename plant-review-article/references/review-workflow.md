@@ -15,7 +15,7 @@ Before drafting a new full review, provide:
 - unresolved questions, likely reviewer risks, and word allocation;
 - databases, dates, screening logic, and appraisal plan when applicable.
 
-Wait for explicit approval. An already approved user-supplied outline satisfies this gate.
+For a new full manuscript, obtain outline approval unless already approved or the user has authorized direct drafting. Existing authorization remains valid.
 
 ## Argument Architecture
 

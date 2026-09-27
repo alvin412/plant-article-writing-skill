@@ -4,7 +4,7 @@
 
 Create a project record containing article type, English and Chinese working titles, target journal when known, central research question, species, genotype, tissue or cell type, developmental stage, treatment, environment, traits, experimental design, controls, replicates, available data and analyses, figures, tables, protocols, source literature, terminology, missing inputs, and current version.
 
-Produce a detailed outline with section and subsection structure, paragraph jobs, result or evidence source for each claim, figure and table plan, word allocation, missing inputs, and reviewer risks. Wait for explicit approval before drafting a new full manuscript.
+Produce a detailed outline with section and subsection structure, paragraph jobs, result or evidence source for each claim, figure and table plan, word allocation, missing inputs, and reviewer risks. Obtain outline approval before drafting a new full manuscript unless already approved or the user has authorized direct drafting.
 
 ## Drafting Order
 

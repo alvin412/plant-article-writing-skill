@@ -1,54 +1,27 @@
 ---
 name: plant-review-article
-description: "Create publication-ready plant-science narrative reviews, perspectives, scoping reviews, systematic reviews, and meta-analyses. Use for complete or partial plant and crop review articles involving stress, signalling, hormones, gene families, development, immunity, genomics, omics, adaptation, yield, or breeding. For a new full review, require detailed outline approval, then continue through literature reading, bilingual drafting, polishing, claim-level citation verification, independent peer review, revision, point-by-point response, re-review, and three final Word deliverables while storing all intermediate artifacts in one folder."
+description: "Write or revise plant-science review text, or prepare its full manuscript or journal submission package."
 ---
 
 # Plant Review Article
 
-## Required References
+## Select the requested scope
 
-- Read `references/review-workflow.md` for every full review.
-- Also read `references/stress-review-storyline.md` for stress, gene-family, pathway, regulator, hormone, ncRNA, epigenetic, or signalling reviews.
-- Also read `references/systematic-review-search.md` for scoping, systematic, or meta-analytic reviews.
-- Read `references/quality-and-deliverables.md` before citation audit, peer review, revision, or Word generation.
+| Task | Read and deliver |
+|---|---|
+| Paragraph or section writing/editing | Use the supplied text and relevant evidence; return only the requested text/file and language. No full outline or submission package is required. |
+| Claim or citation audit | Use `reading-literature` targeted verification; return source-anchored decisions for the specified claims. |
+| Journal finalization only | Read `references/journal-finalization-checklist.md`; format the supplied manuscript and provide the requested compliance findings. |
+| New complete manuscript or full package | Read `references/full-manuscript-workflow.md` and the appropriate writing guide. Retain the default bilingual four-file package unless the user specifies another output. |
 
-Use `reading-literature` for every substantive cited source. Follow its Zotero confirmation gate whenever close-reading notes may be saved to Zotero.
+Use `references/stress-review-storyline.md` only for substantive stress/pathway synthesis and `references/systematic-review-search.md` for systematic, scoping, or meta-analytic methods.
 
-## Core Contract
+## Narrative and tone
 
-Do not invent results, mechanisms, statistics, references, novelty, limitations, or source passages. Match every claim to its evidence and plant context.
+Center the requested writing on the strongest evidence-supported synthesis or perspective, rather than a paper-by-paper chronology. State its contribution early and make each section advance it; close with the supported takeaway instead of a new, broad self-critique. Avoid gratuitous self-weakening language, while representing contradictory studies, uncertainty, search boundaries, and material limitations accurately. Apply this only within the requested editing scope.
 
-For a new full review:
+## Evidence and completion
 
-1. Create a detailed topic-specific outline and evidence plan.
-2. Stop and wait for explicit outline approval.
-3. After approval, continue automatically through the remaining workflow unless essential source material, user data, external-write authorization, or a material scientific decision is missing.
+Do not invent results, methods, statistics, references, novelty, limitations, or source passages. Preserve species, genotype, treatment, experimental context, and causal boundaries. Reuse verified records only when source version and claim scope still match; new citations use targeted evidence checks rather than automatic full-paper artifact packages.
 
-## Workflow
-
-Use:
-
-`INTAKE -> OUTLINE_APPROVAL -> CORPUS -> CLOSE_READING -> EVIDENCE_MAP -> DRAFT -> POLISH -> CITATION_AUDIT -> PEER_REVIEW -> REVISION_RESPONSE -> RE_REVIEW -> FINAL_AUDIT -> WORD_QA -> DELIVERED`
-
-The completed review must synthesize evidence by mechanism, scale, method, evidence strength, disagreement, or translation boundary rather than list papers chronologically.
-
-After drafting, perform these steps without requiring separate user prompts:
-
-1. Structural and language polishing of both manuscript languages.
-2. Claim-level verification that every material external assertion is truly supported.
-3. Independent editorial, plant-domain, methods, relevant omics or breeding, and devil's-advocate review.
-4. Manuscript revision and a preserved point-by-point response for every review issue.
-5. Re-review of every claimed change and a fresh final integrity audit.
-6. Word generation, reopening, page rendering, visual inspection, correction, and re-rendering.
-
-## Required Final Files
-
-Create exactly three final Word files under `deliverables/`:
-
-1. `01_plant_article_bilingual.docx` — complete English review followed by the complete academic-Chinese review.
-2. `02_claim_citation_audit_bilingual.docx` — claim-citation matrix, source anchors, support grades, boundaries, unresolved risks, and bilingual explanations.
-3. `03_peer_review_and_response_bilingual.docx` — editorial synthesis, independent review reports, point-by-point responses, exact changes and locations, and re-review verification.
-
-Place every other project artifact under `intermediate_files/`, including search records, screening files, literature matrices, close-reading notes, outlines, draft versions, evidence maps, reviewer working files, JSON inputs, validation reports, and rendered page images.
-
-Use the available `docx` skill for Word creation and render-inspect-revise QA. `scripts/build_article_package.py` may build the three files from verified structured JSON; it must never fill missing scientific content.
+For audits or peer review, read only relevant sections of `references/quality-and-deliverables.md`. Existing outline approval or explicit authorization to proceed remains valid. Missing journal information blocks a submission-ready verdict, not unrelated writing. Complete the requested writing, necessary evidence checks, and requested file QA before delivery; identify unresolved scientific decisions precisely.

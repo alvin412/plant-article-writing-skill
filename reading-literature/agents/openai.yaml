@@ -1,4 +1,4 @@
 interface:
   display_name: "Reading Literature"
-  short_description: "Full-paper evidence, terminology, ideas, and Zotero notes"
-  default_prompt: "Use $reading-literature to read cited papers in full, verify claims, synthesize terminology and research logic from relevant JIF 10+ sources, and propose confirmed Zotero or skill-domain updates."
+  short_description: "Scoped citation checks and full-paper close reading"
+  default_prompt: "Use $reading-literature to check whether this paper supports my claim, with exact evidence anchors."

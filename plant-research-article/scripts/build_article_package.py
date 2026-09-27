@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the three final Word deliverables for plant article workflows."""
+"""Build the four final Word deliverables for plant article workflows."""
 
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ OUTPUT_NAMES = {
     "manuscript": "01_plant_article_bilingual.docx",
     "audit": "02_claim_citation_audit_bilingual.docx",
     "review": "03_peer_review_and_response_bilingual.docx",
+    "compliance": "04_journal_compliance_audit_bilingual.docx",
 }
 
 PLACEHOLDER_PATTERNS = (
@@ -133,6 +134,56 @@ def template_payload() -> dict[str, Any]:
             ],
             "residual_en": ["[[Residual risk or None]]"],
             "residual_zh": ["[[剩余风险或无]]"],
+        },
+        "journal_compliance": {
+            "manuscript_version": "[[Frozen manuscript version]]",
+            "journal": "[[Exact target journal]]",
+            "article_type": "[[Exact journal article type]]",
+            "submission_readiness": "[[READY/WARN/BLOCK]]",
+            "summary_en": "[[English journal-compliance summary]]",
+            "summary_zh": "[[中文期刊合规摘要]]",
+            "sources": [
+                {
+                    "source_type": "Author instructions",
+                    "title": "[[Official source title]]",
+                    "url_or_file": "[[Official URL or supplied file]]",
+                    "accessed": date.today().isoformat(),
+                    "applies_to": "[[Applicable article type or requirement scope]]",
+                }
+            ],
+            "requirements": [
+                {
+                    "id": "J001",
+                    "category": "Structure",
+                    "requirement_en": "[[Exact English requirement]]",
+                    "requirement_zh": "[[中文要求说明]]",
+                    "source": "[[Author-instruction anchor]]",
+                    "manuscript_location": "[[English manuscript location]]",
+                    "status": "[[PASS/WARN/BLOCK]]",
+                    "action_en": "[[English action or rationale]]",
+                    "action_zh": "[[中文处理或理由]]",
+                }
+            ],
+            "reference_audit_en": "[[English reference-style audit]]",
+            "reference_audit_zh": "[[中文参考文献格式核查]]",
+            "nomenclature_audit_en": "[[English nomenclature and typography audit]]",
+            "nomenclature_audit_zh": "[[中文命名与字体核查]]",
+            "language_structure_changes": [
+                {
+                    "id": "CH001",
+                    "location": "[[English manuscript location]]",
+                    "before": "[[Previous text or format]]",
+                    "after": "[[Final text or format]]",
+                    "rationale_en": "[[English rationale]]",
+                    "rationale_zh": "[[中文理由]]",
+                }
+            ],
+            "figures_tables_declarations_en": "[[English figures, tables, and declarations audit]]",
+            "figures_tables_declarations_zh": "[[中文图表与声明核查]]",
+            "unresolved_en": ["[[Unresolved journal item or None]]"],
+            "unresolved_zh": ["[[未解决期刊要求或无]]"],
+            "visual_qa_en": "[[English render and visual-QA status]]",
+            "visual_qa_zh": "[[中文渲染与视觉核查状态]]",
         },
     }
 
@@ -281,7 +332,7 @@ def build_manuscript(payload: dict[str, Any], path: Path) -> None:
     doc = Document()
     configure_document(doc)
     add_title_page(doc, "Bilingual Plant-Science Article / 植物科学双语正文", payload)
-    doc.add_heading("English Manuscript", level=1)
+    doc.add_heading("Target-Journal-Finalized English Manuscript", level=1)
     add_sections(doc, payload.get("manuscript", {}).get("english", []), offset=1)
     doc.add_section(WD_SECTION.NEW_PAGE)
     doc.add_heading("Academic Chinese Manuscript / 学术中文正文", level=1)
@@ -395,6 +446,88 @@ def build_review(payload: dict[str, Any], path: Path) -> None:
     doc.save(path)
 
 
+def build_compliance(payload: dict[str, Any], path: Path) -> None:
+    doc = Document()
+    configure_document(doc)
+    add_title_page(doc, "Journal Compliance Audit / 目标期刊合规核查", payload)
+    compliance = payload.get("journal_compliance", {})
+    add_key_value_table(
+        doc,
+        [
+            ("Frozen manuscript version", compliance.get("manuscript_version", "")),
+            ("Target journal", compliance.get("journal", "")),
+            ("Journal article type", compliance.get("article_type", "")),
+            ("Submission readiness", compliance.get("submission_readiness", "")),
+        ],
+    )
+    doc.add_heading("Compliance Summary", level=1)
+    add_text(doc, compliance.get("summary_en", ""))
+    doc.add_heading("合规摘要", level=1)
+    add_text(doc, compliance.get("summary_zh", ""))
+    doc.add_heading("Official Requirement Sources / 官方要求来源", level=1)
+    add_table(
+        doc,
+        compliance.get("sources", []),
+        [
+            ("source_type", "Type"),
+            ("title", "Source"),
+            ("url_or_file", "URL or file"),
+            ("accessed", "Accessed"),
+            ("applies_to", "Scope"),
+        ],
+    )
+    doc.add_heading("Requirement Matrix / 要求矩阵", level=1)
+    add_table(
+        doc,
+        compliance.get("requirements", []),
+        [
+            ("id", "ID"),
+            ("category", "Category"),
+            ("requirement_en", "Requirement"),
+            ("source", "Source anchor"),
+            ("manuscript_location", "Manuscript location"),
+            ("status", "Status"),
+        ],
+    )
+    for requirement in compliance.get("requirements", []):
+        doc.add_heading(f"Requirement {requirement.get('id', '')}", level=2)
+        add_text(doc, requirement.get("requirement_zh", ""), "中文要求")
+        add_text(doc, requirement.get("action_en", ""), "Action or rationale")
+        add_text(doc, requirement.get("action_zh", ""), "处理或理由")
+    doc.add_heading("Reference Audit / 参考文献核查", level=1)
+    add_text(doc, compliance.get("reference_audit_en", ""), "English")
+    add_text(doc, compliance.get("reference_audit_zh", ""), "中文")
+    doc.add_heading("Nomenclature and Typography / 命名与字体", level=1)
+    add_text(doc, compliance.get("nomenclature_audit_en", ""), "English")
+    add_text(doc, compliance.get("nomenclature_audit_zh", ""), "中文")
+    doc.add_heading("Language and Structural Changes / 语言与结构修改", level=1)
+    add_table(
+        doc,
+        compliance.get("language_structure_changes", []),
+        [
+            ("id", "ID"),
+            ("location", "Location"),
+            ("before", "Before"),
+            ("after", "After"),
+            ("rationale_en", "Rationale"),
+        ],
+    )
+    for change in compliance.get("language_structure_changes", []):
+        add_text(doc, change.get("rationale_zh", ""), f"{change.get('id', '')} 中文理由")
+    doc.add_heading("Figures, Tables, and Declarations / 图表与声明", level=1)
+    add_text(doc, compliance.get("figures_tables_declarations_en", ""), "English")
+    add_text(doc, compliance.get("figures_tables_declarations_zh", ""), "中文")
+    doc.add_heading("Unresolved Items / 未解决事项", level=1)
+    add_text(doc, compliance.get("unresolved_en", []))
+    add_text(doc, compliance.get("unresolved_zh", []))
+    doc.add_heading("Rendering and Visual QA / 渲染与视觉核查", level=1)
+    add_text(doc, compliance.get("visual_qa_en", ""), "English")
+    add_text(doc, compliance.get("visual_qa_zh", ""), "中文")
+    doc.add_heading("Final Submission-Readiness Decision / 最终投稿就绪判定", level=1)
+    add_text(doc, compliance.get("submission_readiness", ""))
+    doc.save(path)
+
+
 def collect_strings(value: Any) -> list[str]:
     if isinstance(value, dict):
         result: list[str] = []
@@ -446,6 +579,7 @@ def build_package(payload: dict[str, Any], project_dir: Path) -> dict[str, Any]:
     build_manuscript(payload, paths["manuscript"])
     build_audit(payload, paths["audit"])
     build_review(payload, paths["review"])
+    build_compliance(payload, paths["compliance"])
 
     all_text = "\n".join(collect_strings(payload))
     placeholders = sorted(
@@ -455,12 +589,22 @@ def build_package(payload: dict[str, Any], project_dir: Path) -> dict[str, Any]:
             for match in re.finditer(pattern, all_text, flags=re.IGNORECASE)
         }
     )
+    compliance_status = str(
+        payload.get("journal_compliance", {}).get("submission_readiness", "")
+    ).strip().upper()
+    if placeholders:
+        release_status = "BLOCK_PLACEHOLDERS"
+    elif compliance_status not in {"PASS", "READY", "SUBMISSION-READY", "SUBMISSION_READY"}:
+        release_status = "BLOCK_JOURNAL_COMPLIANCE"
+    else:
+        release_status = "STRUCTURAL_PASS_RENDER_REQUIRED"
     report = {
         "generated_on": date.today().isoformat(),
         "files": [validate_docx(path) for path in paths.values()],
         "placeholder_warnings": placeholders,
+        "journal_compliance_status": compliance_status,
         "render_status": "not-run",
-        "release_status": "BLOCK_PLACEHOLDERS" if placeholders else "STRUCTURAL_PASS_RENDER_REQUIRED",
+        "release_status": release_status,
     }
     report_path = validation_dir / "word_package_validation.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -468,7 +612,7 @@ def build_package(payload: dict[str, Any], project_dir: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build the three plant-article Word deliverables.")
+    parser = argparse.ArgumentParser(description="Build the four plant-article Word deliverables.")
     parser.add_argument("input_json", nargs="?", type=Path)
     parser.add_argument("--project-dir", type=Path, default=Path("article_project"))
     parser.add_argument("--init-template", action="store_true")

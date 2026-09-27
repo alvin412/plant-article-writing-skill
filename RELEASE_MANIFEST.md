@@ -1,39 +1,18 @@
-# Release Manifest
+# 发布清单
 
-## Version
+## v0.4 — 2026-09-27
 
-`v0.3`
+本版本同步本机当前使用的四个技能：
 
-## Skill Directories
+- `plant-article-writing/`
+- `reading-literature/`
+- `plant-research-article/`
+- `plant-review-article/`
 
-```text
-plant-article-writing/
-reading-literature/
-plant-review-article/
-plant-research-article/
-article-finalize/
-```
+相对 v0.3，主要变化包括：文献核查按请求范围执行，领域知识与图像素材改为可选模式；研究论文与综述工作流更新；期刊终审集成到两套写作技能，完整论文套件调整为四份文件；新增以证据为边界的叙事原则，避免无谓的自我削弱，同时如实保留重要反面证据和局限。
 
-Each directory contains `SKILL.md` and `agents/openai.yaml`. The four functional skills contain only the references and scripts required for their workflows.
+旧版独立终审技能和高影响力文献综合指南保存在 `legacy/`，不属于当前推荐安装的技能目录。
 
-## v0.3 Highlights
+## 验证要求
 
-- Added verified `JIF >= 10.0` high-impact literature synthesis to `reading-literature`.
-- Added bilingual terminology ledgers and paraphrased professional expression guidance.
-- Added separate reported research-logic maps and explicitly inferred research ideas.
-- Added a controlled, provenance-backed skill domain update gate requiring author approval.
-- Prevented JIF from being treated as paper-level evidence quality or a replacement for directly relevant lower-JIF literature.
-
-## v0.2 Highlights
-
-- Replaced mixed project modes with one router and four independent skills.
-- Added full-paper literature reading with explicit Zotero-note confirmation and post-write verification.
-- Split plant review and original research writing into distinct workflows.
-- Added the required original-research section contract.
-- Automated polishing, claim-level citation audit, peer review, revision, point-by-point response, re-review, and three-file delivery after outline approval.
-- Standardized `deliverables/` and `intermediate_files/` project layout.
-- Added target-journal finalization with English-only manuscript output and bilingual compliance reporting.
-
-## Validation
-
-Run `quick_validate.py` against each of the five skill directories. Run both copies of `build_article_package.py` against their generated template and confirm that all three DOCX files reopen with valid titles and heading hierarchy. Page-image inspection remains a separate mandatory release gate during real manuscript work.
+对四个当前技能目录分别运行 Codex 的 `quick_validate.py`；检查它们与本机在用技能的文件一致性，并确认引用的文件存在。对两份论文套件生成脚本分别用模板输入进行试运行，重新打开生成的 Word 文件。真实论文交付仍须单独进行页面图像检查。
