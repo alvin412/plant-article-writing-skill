@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plant Peer Review"
+  short_description: "Evidence-based plant manuscript review and re-review"
+  default_prompt: "Use $plant-peer-review to critically review my plant-science manuscript, identifying major scientific and technical concerns with exact evidence locations and actionable revisions."

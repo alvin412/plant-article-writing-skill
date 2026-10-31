@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plant Scientific Figure"
+  short_description: "Science-first SVG/PDF/PNG figures and mechanisms"
+  default_prompt: "Use $plant-scientific-figure to understand the scientific purpose of my plant figure, ask only necessary questions, then produce publication-quality SVG, PDF and PNG with my fixed palette, Arial 8-pt labels and lowercase 12-pt panel letters."
